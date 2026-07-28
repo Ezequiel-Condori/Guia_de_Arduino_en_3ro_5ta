@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Actividad 5 del TP1</title>
+</head>
+<body>
+    <nav>
+        <a href="TP_1.html">Atras</a>
+    </nav>
+    <main id="Titulo_Actividades">
+        <header>
+            <h1>ACTIVIDAD 5 - TP1:</h1>
+        </header>
+        <article>
+            <h2>Consigna:</h2>
+            <p>Realizar un programa que titile 2 leds alternativamente acelerando la frecuencia de encendido hasta el momento que no se vea el efecto<br>
+            y luego vuelva a la velocidad de 1seg de tiempo</p>
+            <details>
+              <summary>Ver el circuito usado</summary>
+              <br>
+              <img src="./Inagenes_de_Actividades/TP1/Actividad 5 del TP1.png" 
+                   alt="Circuito de la Actividad 5 del TP1" 
+                   style="max-width: 100%; max-height: 500px; object-fit: contain;">
+            </details>
+            <pre><code>
+//Este codigo es CASI lo mismo al anterior, lo que cambia es que el tiempo va decreciendo, y es nuestra primera vez que usaremos Variables y Condicionales
+int tiempo=1000;          //Aqui ponemos nuestra variable tiempo
+
+void setup(){
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+}
+void loop(){
+  digitalWrite(2, HIGH);
+  digitalWrite(3, LOW);
+  delay(tiempo);          //En los delay, adentro donde va el valor ponemos el nombre de nuestra variable, asi le indicamos al programa que espere elvalor de nuestra variable
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(tiempo);
+  tiempo=tiempo-50;        //Aqui pedimos que reste el valor de nuestra variable tiempo de 50 en 50
+  if(tiempo&lt;=50){       //Acá preguntamos si tiempo es MENOR o IGUAL a 50, asi nos aseguramos que no baje de 0
+    tiempo=1000;           //Si la respuesta es si, hacemos que tiempo vuelva a valer 1000 ms (1 segundo)
+  }                        //la parte de if la dejamos vacia ya que queremos que se repita sin cambios
+}
+            </code></pre>
+            <p>En estas explicaciones va a poder entender el funcionamiento de cada linea:</p>
+            <ul>
+                <li><a href="Explicacion_1.html">Explicacion 1</a></li>
+                <li><a href="Explicacion_2.html">Explicacion 2</a></li>
+                <li><a href="Explicacion_3.html">Explicacion 3</a></li>
+            </ul>
+        </article>
+    </main>
+</body>
+</html>

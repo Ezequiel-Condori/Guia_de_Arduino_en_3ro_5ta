@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Actividad 4 del TP1</title>
+</head>
+<body>
+    <nav>
+        <a href="TP_1.html">Atras</a>
+    </nav>
+    <main id="Titulo_Actividades">
+        <header>
+            <h1>ACTIVIDAD 4 - TP1:</h1>
+        </header>
+        <article>
+            <h2>Consigna:</h2>
+            <p>Realizar un programa que titile 2 leds alternativamente cada 700ms</p>
+            <details>
+              <summary>Ver el circuito usado</summary>
+              <br>
+              <img src="./Inagenes_de_Actividades/TP1/Actividad 4 del TP1.png" 
+                   alt="Circuito de la Actividad 4 del TP1" 
+                   style="max-width: 100%; max-height: 500px; object-fit: contain;">
+            </details>
+            <pre><code>
+//Este es LO MISMO que el anterior codigo, solo que con un delay mas corto
+
+void setup(){
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+}
+void loop(){
+  digitalWrite(2, HIGH);
+  digitalWrite(3, LOW);
+  delay(700);
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(700);
+}
+            </code></pre>
+            <p>En estas explicaciones va a poder entender el funcionamiento de cada linea:</p>
+            <ul>
+                <li><a href="Explicacion_1.html">Explicacion 1</a></li>
+                <li><a href="Explicacion_2.html">Explicacion 2</a></li>
+            </ul>
+        </article>
+    </main>
+</body>
+</html>
