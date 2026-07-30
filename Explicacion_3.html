@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Explicación 3</title>
+</head>
+<body>
+    <nav>
+        <a href="Explicaciones_generales.html">Atras</a>
+    </nav>
+    <main id="Titulo_Explicaciones">
+        <header>
+            <h1>EXPLICACIÓN 3: VARIABLES Y CONDICIONALES BASICAS</h1>
+        </header>
+        <article>
+            <p>Hola nuevamente lector/a!!! En esta explicación hablaremos de: Las variables y condicionales basicas. Basicas porque hablaremos de las mas simples y menos complejas.<br>
+            Para explicarlo, usaremos el codigo de la <a href="Actividad_5_TP1.html">actividad 5:</a></p>
+            <pre><code>
+//Este codigo es CASI lo mismo al anterior, lo que cambia es que el tiempo va decreciendo, y es nuestra primera vez que usaremos Variables y Condicionales
+int tiempo=1000;          //Aqui ponemos nuestra variable tiempo
+
+void setup(){
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+}
+void loop(){
+  digitalWrite(2, HIGH);
+  digitalWrite(3, LOW);
+  delay(tiempo);          //En los delay, adentro donde va el valor ponemos el nombre de nuestra variable, asi le indicamos al programa que espere elvalor de nuestra variable
+  digitalWrite(2, LOW);
+  digitalWrite(3, HIGH);
+  delay(tiempo);
+  tiempo=tiempo-50;        //Aqui pedimos que reste el valor de nuestra variable tiempo de 50 en 50
+  if(tiempo&lt;=50){       //Acá preguntamos si tiempo es MENOR o IGUAL a 50, asi nos aseguramos que no baje de 0
+    tiempo=1000;           //Si la respuesta es si, hacemos que tiempo vuelva a valer 1000 ms (1 segundo)
+  }                        //la parte de if la dejamos vacia ya que queremos que se repita sin cambios
+}
+            </code></pre>
+            <p>Como se indica en los comentarios de dicho código, aquí <strong>introducimos las variables y Condicionales</strong>.</p>
+            <p>Las variables son como <strong>"Una caja"</strong>, en la cual podemos llenar de valores, simbolos, letras, etc... Esta se crea con un <code>int [nombre a eleccion]=[letra o valor a eleccion]</code>. Estos, por lo general <strong>se ejecutan al inico</strong>, esos son conocidos como <strong>Variables Globales</strong>, pero en ciertos casos se ejecutan adentro del loop (A esos se los conoce como <strong>Variables locales</strong>). Existen mas tipos de variables, como el<code> long int</code>, y mas... pero eso sera para mas adelante, falta... algo (no mucho), este seria el mas común de todos, y uno de los mas livianos si hablamos de ocupacion de memoria RAM (Aunque eso por ahora no importa tanto). Aquí abajo tiene una lista de lo que consume cada tipo de variable:</p>
+            <ul>
+                <li><code>char</code>= 1 byte ----- Se usa para poner caracteres, como '2', 'b', etc, no son valores y <strong>SIEMPRE</strong> se tienen que poner entre comillas simples, osea estas: ''.</li>
+                <li><code>int</code>= 2 bytes ----- Se usa para números enteros del -32768 al 32767, mas alla de eso no soporta.</li>
+                <li><code>long int</code>= 3-4 bytes ----- Es como un int pero con mayor capacidad, desde -2147483648 al 2147483648.</li>
+                <li><code>float</code>= 4 bytes ----- Se usa para números decimales o con ".".</li>
+            </ul>
+            <p>En nuestro caso, es solo para <strong>números normales</strong>, por eso usamos <code>int</code>, se puede usar <code>long int</code> pero ocuparia mas memoria RAM, aunque ahora no importa tanto, mas adelante esto sera importante.</p>
+            <p>Ahora vamos con las condicionales y su funcionamiento:</p>
+            <p>Las condicionales son preguntas que hacemos al codigo, por ejemplo, digamos que estamos en un juego, y tienes que usar una llave para pasar a la siguiente parte, el juego <strong>vera si tienes la llave o no</strong>, si tienes la llave, te dejara continuar (<code>if</code>), pero si no la tienes, el juego va a revisar si te compraste un pase de temporada (<code>else if</code>), pero si ni tienes eso, no te dejara pasar(<code>else</code>). Eso mismo hace el <code>if</code>. Tomemos de ejemplo nuestro <code>if</code> del codigo de arriba, nos dice <strong>"Si <code>tiempo</code> es menor a 50, cambia su valor a 1000, en este caso no existe un <code>else</code> (SINO)</strong>, porque queremos que el codigo funcione normalmente si no se cumple la condicion.</p>
+            <p>En resumen, <code>if</code> es la pregunta, <code>else if</code> es la siguiente pregunta, y <code>else</code> ocurre si ninguno de los 2 anteriores ocurrio antes. Se pueden poner tantas veces quieras los <code>if</code> y <code>else if</code>, PERO recuerda, solo puede haber un <code>else</code> por cada <code>if</code> que tengas, si por algun motivo pones 2 <code>else</code> y un solo <code>if</code>, te va a tirar error.</p>
+            <p>Bueno, eso es todo de esta explicacion, espero haberle ayudado con esto, nos vemos en la siguiente explicacion.</p>
+            <p>Buena suerte con su codigo ;]</p>
+            <p>Bye!!!</p>
+        </article>
+    </main>
+</body>
+</html>

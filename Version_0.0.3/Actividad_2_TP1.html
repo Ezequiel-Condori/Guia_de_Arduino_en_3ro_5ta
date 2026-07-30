@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Actividad 1 del TP1</title>
+</head>
+<body>
+    <nav>
+        <a href="TP_1.html">Atras</a>
+    </nav>
+    <main id="Titulo_Actividades">
+        <header>
+            <h1>ACTIVIDAD 2 - TP1:</h1>
+        </header>
+        <article>
+            <h2>Consigna:</h2>
+            <p>Realizar un programa que encienda y apague 2 leds al mismo tiempo cada 600ms</p>
+            <details>
+              <summary>Ver el circuito usado</summary>
+              <br>
+              <img src="./Inagenes_de_Actividades/TP1/Actividad 2 del TP1.png" 
+                   alt="Circuito de la Actividad 2 del TP1" 
+                   style="max-width: 100%; max-height: 500px; object-fit: contain;">
+            </details>
+            <pre><code>
+void setup(){
+  pinMode(2, OUTPUT);      //En este caso configuramos 2 pines para salida, asi logramos prender 2 LED's de forma independiente, sin necesidad de que uno dependa del otro
+  pinMode(3, OUTPUT);
+}
+void loop(){
+  digitalWrite(2, HIGH);   //Prendemos los 2 a la vez
+  digitalWrite(3, HIGH);
+  delay(600);              //Damos un tiempo un poco mas corto como pide la actividad
+  digitalWrite(2, LOW);    //Apagamos los 2 a la vez
+  digitalWrite(3, LOW);
+  delay(600);              //Damos un tiempo para ver a los 2 apagarse
+}
+            </code></pre>
+            <p>En estas explicaciones va a poder entender el funcionamiento de cada linea:</p>
+            <ul>
+                <li><a href="Explicacion_1.html">Explicacion 1</a></li>
+                <li><a href="Explicacion_2.html">Explicacion 2</a></li>
+            </ul>
+        </article>
+    </main>
+</body>
+</html>

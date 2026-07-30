@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Actividad 7 del TP1</title>
+</head>
+<body>
+    <nav>
+        <a href="TP_1.html">Atras</a>
+    </nav>
+    <main id="Titulo_Actividades">
+        <header>
+            <h1>ACTIVIDAD 7 - TP1:</h1>
+        </header>
+        <article>
+            <h2>Consigna:</h2>
+            <p>Realizar un programa con 12 leds y que se vayan encendiendo en secuencia y luego apagando en la secuencia inversa</p>
+            <details>
+              <summary>Ver el circuito usado</summary>
+              <br>
+              <img src="./Inagenes_de_Actividades/TP1/Actividad 7 del TP1.png" 
+                   alt="Circuito de la Actividad 7 del TP1" 
+                   style="max-width: 100%; max-height: 500px; object-fit: contain;">
+            </details>
+            <pre><code>
+//Aquí cambia la cosa, pero sigue casi la misma logica, usar un intermediario para saber si pasa x cosa, en este caso, para ver si va hacia la izquierda o a la derecha
+int led=2;  //Acá asignamos el valor de una nueva variable, la cual usaremos para los LED's, sin esta, el codigo seria mas largo, y ese no es el objetivo
+int dir=0;
+
+void setup(){
+  for (int i=2; i&lt;=13; i++){  //Hacemos un bucle for para suministrar energia a distintos LED's mientras pase el tiempo
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop(){
+  digitalWrite(led, HIGH);
+  delay(200);
+  digitalWrite(led, LOW);
+  delay(200);
+  if(dir==0){  //Acá hacemos la misma pregunta del anterior punto, ¿dir vale 0? 
+    led++;  //Si ese es el caso, vamos a sumarle 1 a nuestra variable que usamos para los LED's, llendo de izquierda a derecha
+    if(led&gt;=13){  //Luego de la suma, preguntamos si llegamos al LED del pin 13 (el ultimo LED)
+      dir=1;  //Si ese es el caso, pasaremos a dir 1, lo que significa que va de la derecha a la izquierda
+    }
+  }
+  else{  //Si desde el empiezo dir NO vale 0, en lugar de hacer todo lo de ahi arriba, va a hacer lo siguiente:
+    led--;  //Va a restar el valor de nuestra variable de los LED's, haciendo que vaya de derevha a izquierda
+    if(led&lt;=2){  //Hasta llegar al LED del pin 2 (el primero de la fila)
+      dir=0;  //Si llega hasta ese LED, dir volvera a valer 0, haciendo que los LED's vayan de izquierda a derecha, y asi infinitamente...
+    }
+  }
+}
+//La explicacion del bucle for esta en Explicacion 4 :]
+            </code></pre>
+            <p>En estas explicaciones va a poder entender el funcionamiento de cada linea:</p>
+            <ul>
+                <li><a href="Explicacion_1.html">Explicacion 1</a></li>
+                <li><a href="Explicacion_2.html">Explicacion 2</a></li>
+                <li><a href="Explicacion_3.html">Explicacion 3</a></li>
+                <li><a href="Explicacion_4.html">Explicacion 4</a></li>
+            </ul>
+        </article>
+    </main>
+</body>
+</html>

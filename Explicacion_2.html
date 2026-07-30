@@ -14,8 +14,7 @@
             <h1>EXPLICACIÓN 2: CONFIGURACION DE UN LED</h1>
         </header>
         <article>
-            <p>Hola nuevamente lector/a!!! En esta explicación hablaremos de: ¿Comó configurar un LED en Arduino? Y es muy facil, tomaremos nuevamente de ejemplo<br>
-            el codigo de la <a href="Actividad_1_TP1.html">actividad 1:</a></p>
+            <p>Hola nuevamente lector/a!!! En esta explicación hablaremos de: ¿Comó configurar un LED en Arduino? Y es muy facil, tomaremos nuevamente de ejemplo el codigo de la <a href="Actividad_1_TP1.html">actividad 1:</a></p>
             <pre><code>
 void setup(){
   pinMode(2, OUTPUT);      //Configuramos al pin 2 como salida
@@ -27,15 +26,8 @@ void loop(){
   delay(800);              //Este último delay para apreciar al LED mientras está apagado
 }
             </code></pre>
-            <p>Primero, y lo mas importante, configuramos un pin de salida de energia, esto se logra poniendo adentro del <code>setup</code>: <code>pinMode(X, OUTPUT)</code>.<br>
-            Este le dice al Arduino "Al pin que se introdusca en X, seleccionalo como pin de salida, preparalo para suministrar y cortar corriente", un error a la hora de<br>
-            intentar comprenderlo es pensar que este suministra energia al pin (Tambien creia eso, y de hecho puse eso en la version .txt de esta explicacion), pero NO HACE ESO,<br>
-            y entonces te preguntaras ¿Y comó suministro energia a ese pin?, eso es lo que hace la linea 5, <code>digitalWrite(X, HIGH/LOW)</code>. Para entenderlo mejor,piensa<br>
-            que <code>HIGH</code> manda los 5V al pin que se introduzca en X, y <code>LOW</code>corta la corriente, bajando el Voltaje de pin X a 0V (Tierra/GND). Con todo esto<br>
-            estarias CASI listo para programar un PIN que titile, si no quieres que titile no hace falta esto, pero nos olvidamos de <code>delay</code>! Su funcionamiento es simple,<br>
-            cuando el codigo llega ahi, le dice al Arduino "Espera (X cantidad de tiempo en milisegundos) antes de continuar", en este codigo ponemos 800ms para que sea notable el efecto<br>
-            de la titilacion, sin esto, o con un delay MUY bajo, no se podria llegar a apreciar dicho efecto.<br>
-            Eso es todo, nos vemos en la siguiente explicacion!!! Chau/Bye! :].</p>
+            <p>Primero, y lo mas importante, configuramos un pin de salida de energia, esto se logra poniendo adentro del <code>setup</code>: <code>pinMode(X, OUTPUT)</code>. Este le dice al Arduino "Al pin que se introdusca en X, seleccionalo como pin de salida, preparalo para suministrar y cortar corriente", un error a la hora de intentar comprenderlo es pensar que este suministra energia al pin (Tambien creia eso, y de hecho puse eso en la version .txt de esta explicacion), pero <strong>NO HACE ESO</strong>, y entonces te preguntaras ¿Y comó suministro energia a ese pin?, eso es lo que hace la linea 5, <code>digitalWrite(X, HIGH/LOW)</code>. Para entenderlo mejor, piensa que <code>HIGH</code> manda los 5V al pin que se introduzca en X, y <code>LOW</code>corta la corriente, bajando el Voltaje de pin X a 0V (Tierra/GND). Con todo esto estarias CASI listo para programar un PIN que titile, si no quieres que titile no hace falta esto, pero nos olvidamos de <code>delay</code>! Su funcionamiento es simple, cuando el codigo llega ahi, le dice al Arduino "Espera (X cantidad de tiempo en milisegundos) antes de continuar", en este codigo ponemos 800ms para que sea notable el efecto de la titilacion, sin esto, o con un delay MUY bajo, no se podria llegar a apreciar dicho efecto.</p>
+            <p>Eso es todo, nos vemos en la siguiente explicacion!!! Chau/Bye! :].</p>
         </article>
     </main>
 </body>

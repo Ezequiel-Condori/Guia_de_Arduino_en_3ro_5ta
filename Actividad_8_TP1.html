@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Actividad 8 del TP1</title>
+</head>
+<body>
+    <nav>
+        <a href="TP_1.html">Atras</a>
+    </nav>
+    <main id="Titulo_Actividades">
+        <header>
+            <h1>ACTIVIDAD 8 - TP1:</h1>
+        </header>
+        <article>
+            <h2>Consigna:</h2>
+            <p>Realizar un programa con 12 leds que vayan encendiendo dejando encendidos los anteriores hasta que queden todos encendidos y luego se vayan apagando en forma inversa</p>
+            <details>
+              <summary>Ver el circuito usado</summary>
+              <br>
+              <img src="./Inagenes_de_Actividades/TP1/Actividad 8 del TP1.png" 
+                   alt="Circuito de la Actividad 8 del TP1" 
+                   style="max-width: 100%; max-height: 500px; object-fit: contain;">
+            </details>
+            <pre><code>
+//Acá volvemos a usar la misma logica de la actividad anterior, solo que con pequeños cambios, pero es casi lo mismo
+int led=2;  //Usamos las mismas variables
+int dir=0;  //Ya se saben para es cada uno, asi que no hace falta presentacion
+
+void setup(){
+  for (int i=2; i&lt;=13; i++){  //El mismo bucle for, para exactamente lo mismo del punto anterior
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop(){  
+  if(dir==0){ //Empezamos preguntando si dir es 0, recordemos que si es asi, el codigo de abajo va a hacer que los LED's se prendan de izquierda a drrecha, y si no es el caso (dir=1), van a ir de derecha a izquierda 
+    digitalWrite(led, HIGH);  //Prendemos el primer LED
+    delay(200);  //PEEERO, no lo apagamos aun, como pide la consigna
+    if(led&lt;=13){  //Luego de prenderlo, preguntaremos si el LED donde esta actualmente prendido esta en el pin 13 o menor
+      led++;  //Si es asi, sumamos 1 a la variable de los LED's, haciendo que pase a prender el siguiente LED, hasta llegar al pin 13
+    }
+    else{  //Si ya llego al LED 13...
+      dir=1;  //hacemos que dir valga 1
+    }
+  }
+  else{  //Si en la ultima vuelta dada dir ya vale 1, hacemos lo siguiente:
+    digitalWrite(led, LOW);  //Que vaya apagando los LED's ya prendidos, 1 por 1
+    delay(200);
+    if(led&gt;=2){  //Preguntamos si no llegamos al LED 2 (El ultimo por apagar)
+      led--;  //Si es asi (Aun no llegamos), vamos a seguir apagando mas LED's
+    }
+    else{  //Pero si no es asi, y llegamos a apagar el LED 2:
+      dir=0;  //Cambiamos el valor de dir a 0, haciendo que se repita todo denuevo... HASTA QUE DIGAMOS BASTA!!!
+    }
+  }
+}
+            </code></pre>
+            <p>En estas explicaciones va a poder entender el funcionamiento de cada linea:</p>
+            <ul>
+                <li><a href="Explicacion_1.html">Explicacion 1</a></li>
+                <li><a href="Explicacion_2.html">Explicacion 2</a></li>
+                <li><a href="Explicacion_3.html">Explicacion 3</a></li>
+                <li><a href="Explicacion_4.html">Explicacion 4</a></li>
+            </ul>
+        </article>
+    </main>
+</body>
+</html>
